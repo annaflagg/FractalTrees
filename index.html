@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Fractal Trees</title>
+    <meta charset="utf-8" />
+	<style>
+		canvas {
+			border: 0px solid green;
+		  padding-left: 0;
+		  padding-right: 0;
+		  margin-left: auto;
+		  margin-right: auto;
+		  display: block;		
+		}
+	</style>
+	<script src="ft.js"></script>
+	<script src="jscolor/jscolor.js"></script>
+</head>
+<body>
+    <canvas width="600" height="340" id="ftCanvas">
+			<p>
+				The Fractal Tree Builder requires a browser that supports the
+				<a href="http://www.w3.org/html/wg/html5/">HTML5</a> &lt;canvas&gt; feature.
+			</p>
+		</canvas>
+
+	<form>
+	<p>
+		<label for="backgroundColor">Background color: </label><input class="color" id="backgroundColor" value="FFFFFF" />
+	</p>
+	<p>
+		<label for="trunkColor">Trunk color: </label><input class="color" id="trunkColor" value="000000"/>
+	</p>
+	<p>
+		<label for="leafColor">Leaf color: </label><input class="color" id="leafColor" value="FFFFFF" />
+	</p>
+	<p>
+		<label for="trunkLength">Trunk length: </label><input type="number" id="trunkLength" min="0" max="80" value="60"/>
+	</p>
+	<p>
+		<label for="randomness">Randomness: </label><input type="number" id="randomness" min="0" max="100" value="50"/>
+	</p>
+	<p>
+		<label for="splitAngle">Branch split angle: 
+		</label><input type="number" id="splitAngle" min="0" max="90" value="18"/>
+	</p>
+	<p>
+	<input type="button" id="previewImage" value="Preview Image">
+	<input type="button" id="makeImage" value="Make Image">
+	</p>
+</form>
+
+</body>
+</html>
+
+
+
+
