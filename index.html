@@ -13,8 +13,21 @@
 		  display: block;		
 		}
 	</style>
+  <link rel="Stylesheet" type="text/css" href="http://www.digitalmagicpro.com/jPicker/css/jPicker-1.1.6.min.css" />
+  <link rel="Stylesheet" type="text/css" href="http://www.digitalmagicpro.com/jPicker/css/jPicker-1.1.6.css" />
+	<script src="util.js"></script>
 	<script src="ft.js"></script>
-	<script src="jscolor/jscolor.js"></script>
+  <script src="http://www.digitalmagicpro.com/jPicker/jquery-1.4.4.min.js" type="text/javascript"></script>
+  <script src="http://www.digitalmagicpro.com/jPicker/jpicker-1.1.6.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(
+		  function()
+		  {
+		    $('#bgColor').jPicker({window:{expandable: true}});
+		    $('#trunkColor').jPicker({window:{expandable: true}});
+		    $('#leafColor').jPicker({window:{expandable: true}});
+		  });
+	</script>
 </head>
 <body>
     <canvas width="600" height="340" id="ftCanvas">
@@ -26,23 +39,30 @@
 
 	<form>
 	<p>
-		<label for="backgroundColor">Background color: </label><input class="color" id="backgroundColor" value="FFFFFF" />
+		<label for="bgColor">Background color: </label><input type="hidden" class="color" id="bgColor" value="FFFFFF" onChange="previewImage();"/>
 	</p>
 	<p>
-		<label for="trunkColor">Trunk color: </label><input class="color" id="trunkColor" value="000000"/>
+		<label for="trunkColor">Trunk color: </label><input type="hidden" class="color" id="trunkColor" value="000000"/>
 	</p>
 	<p>
-		<label for="leafColor">Leaf color: </label><input class="color" id="leafColor" value="FFFFFF" />
+		<label for="leafColor">Leaf color: </label><input type="hidden" class="color" id="leafColor" value="FFFFFF" />
 	</p>
 	<p>
-		<label for="trunkLength">Trunk length: </label><input type="number" id="trunkLength" min="0" max="80" value="60"/>
-	</p>
-	<p>
-		<label for="randomness">Randomness: </label><input type="number" id="randomness" min="0" max="100" value="50"/>
+		<label for="trunkLength">Trunk length: </label><input type="range" id="trunkLength" min="0" max="40" value="30"/>
 	</p>
 	<p>
 		<label for="splitAngle">Branch split angle: 
-		</label><input type="number" id="splitAngle" min="0" max="90" value="18"/>
+		</label><input type="range" id="splitAngle" min="10" max="30" value="18"/>
+	</p>
+	<p>
+		<label for="shrinkRate">Branch shrinkage rate: 
+		</label><input type="range" id="shrinkRate" min="0" max="100" value="36"/>
+	</p>
+	<p>
+		<label for="numIterations">Number of iterations: </label><input type="range" id="numIterations" min="0" max="24" value="16"/>
+	</p>
+	<p>
+		<label for="randomness">Randomness: </label><input type="range" id="randomness" min="0" max="80" value="30"/>
 	</p>
 	<p>
 	<input type="button" id="previewImage" value="Preview Image">
